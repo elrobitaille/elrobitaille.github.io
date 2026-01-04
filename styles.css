@@ -16,27 +16,31 @@
     --color-gray-100: #f5f5f5;
     --color-white: #ffffff;
 
-    /* Accent Color (use sparingly) */
-    --color-accent: #0066cc;
-    --color-accent-hover: #0052a3;
+    /* Cerulean Blue Accent */
+    --color-cerulean: #2A9DF4;
+    --color-cerulean-light: #57B8FF;
+    --color-cerulean-dark: #1E88E5;
+    --color-accent: var(--color-cerulean);
+    --color-accent-hover: var(--color-cerulean-dark);
 
     /* Borders */
     --border-subtle: rgba(0, 0, 0, 0.06);
     --border-medium: rgba(0, 0, 0, 0.12);
+    --border-cerulean: rgba(42, 157, 244, 0.3);
 
     /* Shadows - very subtle */
     --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.04);
 
-    /* Typography Scale */
-    --text-xs: 12px;
-    --text-sm: 14px;
-    --text-base: 16px;
-    --text-lg: 18px;
-    --text-xl: 20px;
-    --text-2xl: 24px;
-    --text-3xl: 36px;
-    --text-4xl: 48px;
-    --text-5xl: 72px;
+    /* Typography Scale - Bigger! */
+    --text-xs: 13px;
+    --text-sm: 15px;
+    --text-base: 18px;
+    --text-lg: 21px;
+    --text-xl: 24px;
+    --text-2xl: 30px;
+    --text-3xl: 42px;
+    --text-4xl: 56px;
+    --text-5xl: 84px;
 
     /* Font Weights */
     --weight-light: 300;
@@ -121,13 +125,13 @@ body {
 .logo {
     font-size: var(--text-base);
     font-weight: var(--weight-medium);
-    color: var(--color-black);
+    color: var(--color-cerulean);
     text-decoration: none;
-    transition: opacity 0.2s ease;
+    transition: color 0.2s ease;
 }
 
 .logo:hover {
-    opacity: 0.5;
+    color: var(--color-cerulean-dark);
 }
 
 .nav-links {
@@ -141,12 +145,12 @@ body {
     color: var(--color-gray-900);
     font-size: var(--text-sm);
     font-weight: var(--weight-regular);
-    transition: opacity 0.2s ease;
+    transition: color 0.2s ease;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-    opacity: 0.5;
+    color: var(--color-cerulean);
 }
 
 .mobile-menu-toggle {
@@ -207,13 +211,13 @@ body {
 .featured-project {
     margin-top: var(--space-2xl);
     padding: var(--space-lg);
-    border: 1px solid var(--border-subtle);
+    border: 2px solid var(--border-subtle);
     border-radius: 4px;
     transition: border-color 0.3s ease;
 }
 
 .featured-project:hover {
-    border-color: var(--border-medium);
+    border-color: var(--color-cerulean);
 }
 
 .featured-link {
@@ -224,17 +228,18 @@ body {
 
 .featured-label {
     font-size: var(--text-xs);
-    color: var(--color-gray-400);
+    color: var(--color-cerulean);
     text-transform: uppercase;
     letter-spacing: var(--tracking-wider);
     margin-bottom: var(--space-sm);
     display: block;
+    font-weight: var(--weight-medium);
 }
 
 .featured-project h3 {
     font-size: var(--text-2xl);
     font-weight: var(--weight-medium);
-    color: var(--color-black);
+    color: var(--color-cerulean-dark);
     margin-bottom: var(--space-xs);
 }
 
@@ -250,14 +255,14 @@ body {
     font-weight: var(--weight-light);
     letter-spacing: var(--tracking-tight);
     line-height: var(--line-tight);
-    color: var(--color-black);
+    color: var(--color-cerulean);
     margin-bottom: var(--space-xl);
 }
 
 .subsection-title {
     font-size: var(--text-xl);
     font-weight: var(--weight-medium);
-    color: var(--color-gray-700);
+    color: var(--color-cerulean-dark);
     margin-bottom: var(--space-lg);
 }
 
@@ -286,14 +291,14 @@ body {
 }
 
 .project-card {
-    border: 1px solid var(--border-subtle);
+    border: 2px solid var(--border-subtle);
     border-radius: 4px;
     overflow: hidden;
     transition: border-color 0.3s ease;
 }
 
 .project-card:hover {
-    border-color: var(--border-medium);
+    border-color: var(--color-cerulean);
 }
 
 .project-header {
@@ -325,9 +330,9 @@ body {
 
 .project-expand {
     background: none;
-    border: 1px solid var(--border-medium);
-    width: 32px;
-    height: 32px;
+    border: 2px solid var(--color-cerulean);
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     cursor: pointer;
     display: flex;
@@ -338,14 +343,18 @@ body {
 }
 
 .project-expand:hover {
-    background-color: var(--color-gray-100);
+    background-color: var(--color-cerulean);
+}
+
+.project-expand:hover .expand-icon {
+    color: var(--color-white);
 }
 
 .expand-icon {
     font-size: 20px;
-    color: var(--color-gray-700);
+    color: var(--color-cerulean);
     line-height: 1;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .project-card.expanded .expand-icon {
@@ -386,13 +395,14 @@ body {
 }
 
 .project-link {
-    color: var(--color-gray-900);
+    color: var(--color-cerulean);
     text-decoration: none;
-    transition: opacity 0.2s ease;
+    transition: color 0.2s ease;
+    font-weight: var(--weight-medium);
 }
 
 .project-link:hover {
-    opacity: 0.5;
+    color: var(--color-cerulean-dark);
 }
 
 /* Publications Section */
@@ -452,16 +462,18 @@ body {
 
 .pub-link {
     font-size: var(--text-sm);
-    color: var(--color-gray-900);
+    color: var(--color-cerulean);
     text-decoration: none;
     padding: var(--space-xs) var(--space-sm);
-    border: 1px solid var(--border-medium);
+    border: 1px solid var(--color-cerulean);
     border-radius: 3px;
     transition: all 0.2s ease;
+    font-weight: var(--weight-medium);
 }
 
 .pub-link:hover {
-    background-color: var(--color-gray-100);
+    background-color: var(--color-cerulean);
+    color: var(--color-white);
 }
 
 /* CV Section */
@@ -478,17 +490,17 @@ body {
 .cv-download-btn {
     display: inline-block;
     padding: var(--space-sm) var(--space-lg);
-    background-color: var(--color-black);
+    background-color: var(--color-cerulean);
     color: var(--color-white);
     text-decoration: none;
     font-size: var(--text-base);
     font-weight: var(--weight-medium);
     border-radius: 4px;
-    transition: opacity 0.2s ease;
+    transition: background-color 0.2s ease;
 }
 
 .cv-download-btn:hover {
-    opacity: 0.8;
+    background-color: var(--color-cerulean-dark);
 }
 
 .cv-embed {
@@ -629,14 +641,15 @@ body {
 
 .contact-email {
     font-size: var(--text-xl);
-    color: var(--color-black);
+    color: var(--color-cerulean);
     text-decoration: none;
     display: inline-block;
-    transition: opacity 0.2s ease;
+    transition: color 0.2s ease;
+    font-weight: var(--weight-medium);
 }
 
 .contact-email:hover {
-    opacity: 0.5;
+    color: var(--color-cerulean-dark);
 }
 
 .contact-social {
@@ -647,13 +660,13 @@ body {
 
 .contact-social a {
     font-size: var(--text-base);
-    color: var(--color-gray-500);
+    color: var(--color-cerulean);
     text-decoration: none;
-    transition: opacity 0.2s ease;
+    transition: color 0.2s ease;
 }
 
 .contact-social a:hover {
-    opacity: 0.5;
+    color: var(--color-cerulean-dark);
 }
 
 /* Contact Form */
@@ -678,7 +691,7 @@ body {
 .contact-form input:focus,
 .contact-form textarea:focus {
     outline: none;
-    border-color: var(--color-gray-700);
+    border-color: var(--color-cerulean);
 }
 
 .contact-form textarea {
@@ -689,18 +702,18 @@ body {
 .form-submit {
     align-self: flex-start;
     padding: var(--space-sm) var(--space-lg);
-    background-color: var(--color-black);
+    background-color: var(--color-cerulean);
     color: var(--color-white);
     border: none;
     border-radius: 4px;
     font-size: var(--text-base);
     font-weight: var(--weight-medium);
     cursor: pointer;
-    transition: opacity 0.2s ease;
+    transition: background-color 0.2s ease;
 }
 
 .form-submit:hover {
-    opacity: 0.8;
+    background-color: var(--color-cerulean-dark);
 }
 
 /* Footer */
@@ -730,10 +743,12 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
     :root {
-        --text-5xl: 48px;
-        --text-4xl: 36px;
-        --text-3xl: 28px;
-        --text-2xl: 20px;
+        --text-5xl: 56px;
+        --text-4xl: 42px;
+        --text-3xl: 32px;
+        --text-2xl: 26px;
+        --text-xl: 22px;
+        --text-lg: 19px;
         --space-4xl: 80px;
         --space-3xl: 60px;
     }
@@ -792,8 +807,9 @@ body {
 
 @media (max-width: 480px) {
     :root {
-        --text-5xl: 36px;
-        --text-4xl: 28px;
+        --text-5xl: 42px;
+        --text-4xl: 32px;
+        --text-3xl: 26px;
         --space-4xl: 60px;
     }
 
