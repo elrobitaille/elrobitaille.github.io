@@ -5,18 +5,16 @@ const navLinks = document.querySelector('.nav-links');
 if (mobileMenuToggle) {
     mobileMenuToggle.addEventListener('click', () => {
         navLinks.classList.toggle('active');
-        mobileMenuToggle.classList.toggle('active');
+    });
+
+    // Close mobile menu when clicking on a link
+    const navLinkItems = document.querySelectorAll('.nav-links a');
+    navLinkItems.forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
     });
 }
-
-// Close mobile menu when clicking on a link
-const navLinkItems = document.querySelectorAll('.nav-links a');
-navLinkItems.forEach(link => {
-    link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        mobileMenuToggle.classList.remove('active');
-    });
-});
 
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -34,20 +32,43 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Navbar scroll effect
+// Navbar show/hide on scroll direction
 let lastScroll = 0;
 const navbar = document.querySelector('.navbar');
 
 window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
-    
-    if (currentScroll > 100) {
-        navbar.style.boxShadow = '0 4px 12px rgba(0, 0, 0, 0.15)';
+
+    // Hide navbar when scrolling down, show when scrolling up
+    if (currentScroll > lastScroll && currentScroll > 100) {
+        navbar.classList.add('hidden');
     } else {
-        navbar.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)';
+        navbar.classList.remove('hidden');
     }
-    
+
     lastScroll = currentScroll;
+});
+
+// Expandable Project Cards
+const projectCards = document.querySelectorAll('.project-card');
+
+projectCards.forEach(card => {
+    const header = card.querySelector('.project-header');
+    const expandBtn = card.querySelector('.project-expand');
+
+    if (header && expandBtn) {
+        // Make entire header clickable
+        header.addEventListener('click', (e) => {
+            // Toggle expanded state
+            card.classList.toggle('expanded');
+        });
+
+        // Prevent double-toggle when clicking the button specifically
+        expandBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            card.classList.toggle('expanded');
+        });
+    }
 });
 
 // Intersection Observer for fade-in animations
@@ -59,28 +80,15 @@ const observerOptions = {
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+            entry.target.classList.add('visible');
         }
     });
 }, observerOptions);
 
-// Observe all sections for animation
-const sections = document.querySelectorAll('.section');
-sections.forEach(section => {
-    section.style.opacity = '0';
-    section.style.transform = 'translateY(30px)';
-    section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(section);
-});
-
-// Observe cards for staggered animation
-const cards = document.querySelectorAll('.education-card, .project-card, .skill-category, .contact-card');
-cards.forEach((card, index) => {
-    card.style.opacity = '0';
-    card.style.transform = 'translateY(30px)';
-    card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
-    observer.observe(card);
+// Observe all fade-in elements
+const fadeElements = document.querySelectorAll('.fade-in');
+fadeElements.forEach(element => {
+    observer.observe(element);
 });
 
 // Add active state to navigation based on scroll position
@@ -108,32 +116,8 @@ function updateActiveNav() {
 
 window.addEventListener('scroll', updateActiveNav);
 
-// Typing effect for hero subtitle (optional enhancement)
-const subtitle = document.querySelector('.subtitle');
-if (subtitle) {
-    const originalText = subtitle.textContent;
-    subtitle.textContent = '';
-    let charIndex = 0;
-
-    function typeWriter() {
-        if (charIndex < originalText.length) {
-            subtitle.textContent += originalText.charAt(charIndex);
-            charIndex++;
-            setTimeout(typeWriter, 50);
-        }
-    }
-
-    // Start typing effect after a short delay
-    setTimeout(typeWriter, 1000);
+// Add current year to footer
+const yearElement = document.getElementById('year');
+if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
 }
-
-// Add year to footer dynamically
-const footerYear = document.querySelector('.footer p');
-if (footerYear) {
-    const currentYear = new Date().getFullYear();
-    footerYear.textContent = footerYear.textContent.replace('2024', currentYear);
-}
-
-// Console message for developers
-console.log('%c👋 Hello, fellow developer!', 'font-size: 20px; font-weight: bold; color: #2563eb;');
-console.log('%cFeel free to explore the code and reach out if you have any questions!', 'font-size: 14px; color: #6b7280;');
