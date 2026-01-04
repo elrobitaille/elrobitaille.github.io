@@ -88,3 +88,92 @@ const yearElement = document.getElementById('year');
 if (yearElement) {
     yearElement.textContent = new Date().getFullYear();
 }
+
+// Carousel Functionality
+function initCarousel(container) {
+    const items = container.querySelectorAll('.carousel-item');
+    const dotsContainer = container.querySelector('.carousel-dots');
+    const prevBtn = container.querySelector('.carousel-btn.prev');
+    const nextBtn = container.querySelector('.carousel-btn.next');
+
+    if (items.length === 0) return;
+
+    let currentIndex = 0;
+    let autoRotateInterval;
+
+    // Create dots
+    items.forEach((_, index) => {
+        const dot = document.createElement('div');
+        dot.classList.add('carousel-dot');
+        if (index === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(index));
+        dotsContainer.appendChild(dot);
+    });
+
+    const dots = dotsContainer.querySelectorAll('.carousel-dot');
+
+    function goToSlide(index) {
+        // Remove active and prev classes
+        items[currentIndex].classList.remove('active');
+        dots[currentIndex].classList.remove('active');
+
+        // Add prev class for animation
+        if (index > currentIndex) {
+            items[currentIndex].classList.add('prev');
+        }
+
+        currentIndex = index;
+
+        // Add active class to new slide
+        items[currentIndex].classList.add('active');
+        dots[currentIndex].classList.add('active');
+
+        // Remove prev class after animation
+        setTimeout(() => {
+            items.forEach(item => item.classList.remove('prev'));
+        }, 600);
+
+        // Reset auto-rotate
+        resetAutoRotate();
+    }
+
+    function nextSlide() {
+        const nextIndex = (currentIndex + 1) % items.length;
+        goToSlide(nextIndex);
+    }
+
+    function prevSlide() {
+        const prevIndex = (currentIndex - 1 + items.length) % items.length;
+        goToSlide(prevIndex);
+    }
+
+    function startAutoRotate() {
+        autoRotateInterval = setInterval(nextSlide, 5000); // Rotate every 5 seconds
+    }
+
+    function stopAutoRotate() {
+        clearInterval(autoRotateInterval);
+    }
+
+    function resetAutoRotate() {
+        stopAutoRotate();
+        startAutoRotate();
+    }
+
+    // Event listeners
+    if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+    if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+
+    // Pause auto-rotate on hover
+    container.addEventListener('mouseenter', stopAutoRotate);
+    container.addEventListener('mouseleave', startAutoRotate);
+
+    // Start auto-rotate
+    startAutoRotate();
+}
+
+// Initialize all carousels on the page
+document.addEventListener('DOMContentLoaded', () => {
+    const carousels = document.querySelectorAll('.carousel-container');
+    carousels.forEach(carousel => initCarousel(carousel));
+});
