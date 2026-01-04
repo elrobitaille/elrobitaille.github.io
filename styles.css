@@ -436,6 +436,32 @@ body {
     margin-top: var(--space-xs);
 }
 
+/* Google Scholar Button */
+.google-scholar-section {
+    margin-top: var(--space-3xl);
+    text-align: center;
+    padding: var(--space-xl) 0;
+}
+
+.google-scholar-btn {
+    display: inline-block;
+    padding: var(--space-md) var(--space-xl);
+    background-color: var(--color-cerulean);
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: var(--text-base);
+    font-weight: var(--weight-medium);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(42, 157, 244, 0.2);
+}
+
+.google-scholar-btn:hover {
+    background-color: var(--color-cerulean-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(42, 157, 244, 0.3);
+}
+
 /* Quick Links */
 .quick-links {
     display: flex;
