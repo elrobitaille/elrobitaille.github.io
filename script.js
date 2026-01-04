@@ -91,6 +91,12 @@ fadeElements.forEach(element => {
     observer.observe(element);
 });
 
+// Observe section titles for underline animation
+const sectionTitles = document.querySelectorAll('.section-title');
+sectionTitles.forEach(title => {
+    observer.observe(title);
+});
+
 // Add active state to navigation based on scroll position
 const navLinksList = document.querySelectorAll('.nav-links a');
 const sectionsList = document.querySelectorAll('section[id]');
