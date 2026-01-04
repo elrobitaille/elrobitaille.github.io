@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfolio of [Your Name] - Computer Science Student & Researcher">
-    <title>[Your Name] - Portfolio</title>
+    <title>[Your Name] - Home</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
-            <a href="#home" class="logo">Your Name</a>
+            <a href="index.html" class="logo">Your Name</a>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#publications">Publications</a></li>
-                <li><a href="#cv">CV</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="cv.html">CV</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
             <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
                 <span></span>
@@ -29,320 +29,28 @@
     </nav>
 
     <!-- Home Section -->
-    <section id="home" class="hero">
+    <section class="hero">
         <div class="container container--narrow">
             <div class="hero-content fade-in">
                 <h1 class="gradient-text">Your Name</h1>
                 <p class="hero-summary">I build intelligent systems that learn from data and solve real-world problems through machine learning and software engineering.</p>
                 <p class="hero-status">PhD Student in Computer Science · University Name · Machine Learning & AI</p>
 
-                <!-- Optional: Featured Project Highlight -->
+                <!-- Featured Project Highlight -->
                 <div class="featured-project floating">
-                    <a href="#projects" class="featured-link">
+                    <a href="projects.html" class="featured-link">
                         <span class="featured-label">Featured Project</span>
                         <h3>Neural Architecture Search for Edge Devices</h3>
+                        <p class="project-year">2024</p>
                         <p>Automated machine learning framework achieving 40% efficiency improvement</p>
                     </a>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="container container--narrow">
-            <h2 class="section-title">About</h2>
-            <div class="about-text">
-                <p>I'm a Computer Science PhD student at [University Name] working at the intersection of machine learning and systems optimization. My research focuses on developing efficient algorithms for resource-constrained environments.</p>
-                <p><strong>Research Focus:</strong> My work centers on neural architecture search, automated machine learning (AutoML), and edge computing. I'm particularly interested in designing systems that can learn and adapt in real-time with limited computational resources.</p>
-                <p><strong>Looking Ahead:</strong> I'm working toward developing generalizable frameworks for deploying intelligent systems at scale. My next research direction explores federated learning approaches for privacy-preserving machine learning in distributed environments.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="section">
-        <div class="container">
-            <h2 class="section-title">Projects</h2>
-            <div class="projects-list">
-                <!-- Project 1 -->
-                <article class="project-card fade-in">
-                    <div class="project-header" data-project="1">
-                        <div class="project-main">
-                            <h3>Neural Architecture Search for Edge Devices</h3>
-                            <p class="project-brief">Automated framework for discovering optimal neural network architectures for resource-constrained hardware</p>
-                        </div>
-                        <button class="project-expand" aria-label="Expand project">
-                            <span class="expand-icon">+</span>
-                        </button>
-                    </div>
-                    <div class="project-details">
-                        <div class="project-section">
-                            <h4>Problem / Goal</h4>
-                            <p>Manual design of neural networks for edge devices is time-consuming and suboptimal. Goal was to automate the discovery of architectures that balance accuracy with computational efficiency.</p>
-                        </div>
-                        <div class="project-section">
-                            <h4>My Contribution</h4>
-                            <p>Designed and implemented the search algorithm, developed hardware-aware cost models, and conducted extensive experiments across multiple edge platforms (Raspberry Pi, NVIDIA Jetson).</p>
-                        </div>
-                        <div class="project-section">
-                            <h4>Tools / Methods</h4>
-                            <p>Python, PyTorch, Reinforcement Learning, Multi-objective Optimization, Edge TPU</p>
-                        </div>
-                        <div class="project-section">
-                            <h4>Outcome</h4>
-                            <p>
-                                <strong>Paper:</strong> "Efficient NAS for Edge Computing" (NeurIPS 2024)<br>
-                                <strong>Code:</strong> <a href="#" class="project-link">github.com/yourname/edge-nas</a><br>
-                                <strong>Results:</strong> 40% improvement in inference efficiency, 15% accuracy gain
-                            </p>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project 2 -->
-                <article class="project-card fade-in">
-                    <div class="project-header" data-project="2">
-                        <div class="project-main">
-                            <h3>Federated Learning Framework for Healthcare</h3>
-                            <p class="project-brief">Privacy-preserving distributed learning system for medical imaging analysis</p>
-                        </div>
-                        <button class="project-expand" aria-label="Expand project">
-                            <span class="expand-icon">+</span>
-                        </button>
-                    </div>
-                    <div class="project-details">
-                        <div class="project-section">
-                            <h4>Problem / Goal</h4>
-                            <p>Healthcare data cannot be centralized due to privacy regulations. Developed a system enabling collaborative model training across hospitals without sharing patient data.</p>
-                        </div>
-                        <div class="project-section">
-                            <h4>My Contribution</h4>
-                            <p>Led the system design, implemented secure aggregation protocols, and validated the approach on medical imaging datasets from three partner hospitals.</p>
-                        </div>
-                        <div class="project-section">
-                            <h4>Tools / Methods</h4>
-                            <p>Python, TensorFlow, Differential Privacy, Secure Multi-party Computation, Docker</p>
-                        </div>
-                        <div class="project-section">
-                            <h4>Outcome</h4>
-                            <p>
-                                <strong>Paper:</strong> Under review at ICML 2025<br>
-                                <strong>Code:</strong> <a href="#" class="project-link">github.com/yourname/fedhealth</a><br>
-                                <strong>Demo:</strong> <a href="#" class="project-link">Interactive visualization</a>
-                            </p>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project 3 -->
-                <article class="project-card fade-in">
-                    <div class="project-header" data-project="3">
-                        <div class="project-main">
-                            <h3>Real-time Object Detection for Autonomous Vehicles</h3>
-                            <p class="project-brief">Lightweight detection system achieving 60 FPS on embedded hardware</p>
-                        </div>
-                        <button class="project-expand" aria-label="Expand project">
-                            <span class="expand-icon">+</span>
-                        </button>
-                    </div>
-                    <div class="project-details">
-                        <div class="project-section">
-                            <h4>Problem / Goal</h4>
-                            <p>Existing object detection models are too slow for real-time autonomous driving applications on edge devices. Required a system that maintains high accuracy while meeting strict latency constraints.</p>
-                        </div>
-                        <div class="project-section">
-                            <h4>My Contribution</h4>
-                            <p>Designed a novel architecture combining efficient convolutional layers with attention mechanisms. Optimized inference pipeline and deployed on automotive-grade hardware.</p>
-                        </div>
-                        <div class="project-section">
-                            <h4>Tools / Methods</h4>
-                            <p>PyTorch, CUDA, TensorRT, ONNX, Computer Vision, Knowledge Distillation</p>
-                        </div>
-                        <div class="project-section">
-                            <h4>Outcome</h4>
-                            <p>
-                                <strong>Paper:</strong> "Lightweight Detection for Autonomous Systems" (CVPR 2024)<br>
-                                <strong>Code:</strong> <a href="#" class="project-link">github.com/yourname/fast-detect</a><br>
-                                <strong>Performance:</strong> 60 FPS @ 95% mAP on NVIDIA Jetson Xavier
-                            </p>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Publications Section -->
-    <section id="publications" class="section">
-        <div class="container container--narrow">
-            <h2 class="section-title">Publications</h2>
-
-            <!-- Published Papers -->
-            <div class="publications-subsection">
-                <h3 class="subsection-title">Published</h3>
-                <div class="publications-list">
-                    <article class="publication-item fade-in">
-                        <h4 class="publication-title">Efficient Neural Architecture Search for Edge Computing Devices</h4>
-                        <p class="publication-authors"><strong>Your Name</strong>, Co-Author One, Co-Author Two</p>
-                        <p class="publication-venue"><em>Neural Information Processing Systems (NeurIPS)</em>, 2024</p>
-                        <div class="publication-links">
-                            <a href="#" class="pub-link">PDF</a>
-                            <a href="#" class="pub-link">arXiv</a>
-                            <a href="#" class="pub-link">Code</a>
-                            <a href="#" class="pub-link">Slides</a>
-                        </div>
-                    </article>
-
-                    <article class="publication-item fade-in">
-                        <h4 class="publication-title">Lightweight Object Detection for Real-time Autonomous Systems</h4>
-                        <p class="publication-authors"><strong>Your Name</strong>, Advisor Name</p>
-                        <p class="publication-venue"><em>Computer Vision and Pattern Recognition (CVPR)</em>, 2024</p>
-                        <div class="publication-links">
-                            <a href="#" class="pub-link">PDF</a>
-                            <a href="#" class="pub-link">arXiv</a>
-                            <a href="#" class="pub-link">Code</a>
-                            <a href="#" class="pub-link">Video</a>
-                        </div>
-                    </article>
-
-                    <article class="publication-item fade-in">
-                        <h4 class="publication-title">Adaptive Learning Rates for Federated Optimization</h4>
-                        <p class="publication-authors">Co-Author Name, <strong>Your Name</strong>, Another Author</p>
-                        <p class="publication-venue"><em>International Conference on Learning Representations (ICLR)</em>, 2023</p>
-                        <div class="publication-links">
-                            <a href="#" class="pub-link">PDF</a>
-                            <a href="#" class="pub-link">arXiv</a>
-                            <a href="#" class="pub-link">Code</a>
-                        </div>
-                    </article>
-                </div>
-            </div>
-
-            <!-- Under Review / Preprints -->
-            <div class="publications-subsection">
-                <h3 class="subsection-title">Under Review / Preprints</h3>
-                <div class="publications-list">
-                    <article class="publication-item fade-in">
-                        <h4 class="publication-title">Privacy-Preserving Federated Learning for Medical Imaging</h4>
-                        <p class="publication-authors"><strong>Your Name</strong>, Medical Collaborator, Advisor Name</p>
-                        <p class="publication-venue"><em>Under review at International Conference on Machine Learning (ICML)</em>, 2025</p>
-                        <div class="publication-links">
-                            <a href="#" class="pub-link">arXiv</a>
-                            <a href="#" class="pub-link">Code</a>
-                        </div>
-                    </article>
-
-                    <article class="publication-item fade-in">
-                        <h4 class="publication-title">Scalable Neural Architecture Search via Gradient-based Methods</h4>
-                        <p class="publication-authors"><strong>Your Name</strong>, Collaborator Name</p>
-                        <p class="publication-venue"><em>Preprint</em>, 2024</p>
-                        <div class="publication-links">
-                            <a href="#" class="pub-link">arXiv</a>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CV Section -->
-    <section id="cv" class="section">
-        <div class="container container--narrow">
-            <h2 class="section-title">Curriculum Vitae</h2>
-            <div class="cv-content">
-                <div class="cv-download">
-                    <a href="path/to/your-cv.pdf" class="cv-download-btn" download>Download CV (PDF)</a>
-                </div>
-
-                <!-- Embedded CV Preview -->
-                <div class="cv-embed">
-                    <iframe src="path/to/your-cv.pdf" title="Curriculum Vitae"></iframe>
-                    <p class="cv-fallback">If the PDF doesn't display, <a href="path/to/your-cv.pdf" download>download it here</a>.</p>
-                </div>
-
-                <!-- Alternative: Text Summary -->
-                <div class="cv-summary">
-                    <div class="cv-section">
-                        <h3>Education</h3>
-                        <div class="cv-item">
-                            <p class="cv-item-title">PhD in Computer Science</p>
-                            <p class="cv-item-place">University Name, 2022 — Present</p>
-                            <p class="cv-item-detail">Advisor: Professor Name · Focus: Machine Learning & Systems</p>
-                        </div>
-                        <div class="cv-item">
-                            <p class="cv-item-title">BS in Computer Science</p>
-                            <p class="cv-item-place">University Name, 2018 — 2022</p>
-                            <p class="cv-item-detail">GPA: 3.9/4.0 · Summa Cum Laude</p>
-                        </div>
-                    </div>
-
-                    <div class="cv-section">
-                        <h3>Experience</h3>
-                        <div class="cv-item">
-                            <p class="cv-item-title">Research Intern</p>
-                            <p class="cv-item-place">Google Research, Summer 2024</p>
-                            <p class="cv-item-detail">Worked on efficient neural architecture search for mobile devices</p>
-                        </div>
-                        <div class="cv-item">
-                            <p class="cv-item-title">Research Assistant</p>
-                            <p class="cv-item-place">University ML Lab, 2022 — Present</p>
-                            <p class="cv-item-detail">Leading research on federated learning and edge computing</p>
-                        </div>
-                    </div>
-
-                    <div class="cv-section">
-                        <h3>Skills</h3>
-                        <p class="cv-skills">Python, PyTorch, TensorFlow, C++, CUDA, Docker, Git, Kubernetes, Linux, Machine Learning, Deep Learning, Computer Vision, Distributed Systems</p>
-                    </div>
-
-                    <div class="cv-section">
-                        <h3>Awards & Honors</h3>
-                        <ul class="cv-list">
-                            <li>Best Paper Award, NeurIPS Workshop on Efficient Deep Learning, 2024</li>
-                            <li>Google PhD Fellowship, 2023</li>
-                            <li>NSF Graduate Research Fellowship, 2022</li>
-                            <li>Outstanding Undergraduate Researcher Award, 2022</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-        <div class="container container--narrow">
-            <h2 class="section-title">Contact</h2>
-            <div class="contact-content">
-                <p class="contact-intro">Feel free to reach out about research collaborations, speaking opportunities, or general inquiries.</p>
-
-                <!-- Email (obfuscated) -->
-                <div class="contact-email-section">
-                    <p class="contact-label">Email</p>
-                    <a href="mailto:yourname@university.edu" class="contact-email">yourname [at] university [dot] edu</a>
-                </div>
-
-                <!-- Links -->
-                <div class="contact-links-section">
-                    <p class="contact-label">Links</p>
-                    <div class="contact-social">
-                        <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">GitHub</a>
-                        <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank" rel="noopener noreferrer">Google Scholar</a>
-                        <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                        <a href="https://twitter.com/yourhandle" target="_blank" rel="noopener noreferrer">Twitter</a>
-                    </div>
-                </div>
-
-                <!-- Optional: Contact Form -->
-                <div class="contact-form-section">
-                    <p class="contact-label">Or send a message</p>
-                    <form class="contact-form" action="#" method="POST">
-                        <input type="text" name="name" placeholder="Your Name" required>
-                        <input type="email" name="email" placeholder="Your Email" required>
-                        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-                        <button type="submit" class="form-submit">Send Message</button>
-                    </form>
+                <!-- Quick Links -->
+                <div class="quick-links">
+                    <a href="projects.html" class="quick-link">View Projects →</a>
+                    <a href="publications.html" class="quick-link">Publications →</a>
+                    <a href="contact.html" class="quick-link">Get in Touch →</a>
                 </div>
             </div>
         </div>
