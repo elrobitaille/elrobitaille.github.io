@@ -683,14 +683,23 @@ body {
 }
 
 .project-link {
-    color: var(--color-cerulean);
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: var(--color-cerulean);
+    color: #ffffff;
     text-decoration: none;
-    transition: color 0.2s ease;
+    border-radius: 4px;
     font-weight: var(--weight-medium);
+    font-size: var(--text-sm);
+    transition: all 0.3s ease;
+    margin-right: 8px;
+    margin-bottom: 8px;
 }
 
 .project-link:hover {
-    color: var(--color-cerulean-dark);
+    background-color: var(--color-cerulean-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(42, 157, 244, 0.3);
 }
 
 /* Publications Section */
